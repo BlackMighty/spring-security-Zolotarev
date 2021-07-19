@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
+import web.dao.UserDao;
 
 
 @Transactional
@@ -20,7 +21,7 @@ public class UserDaoImpl implements UserDao {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 
-    public User findById(long id) {
+    public User findById(Long id) {
         return entityManager.find(User.class, id);
     }
 
